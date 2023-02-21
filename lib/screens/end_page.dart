@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quizapp/utils/constants.dart';
 
@@ -31,18 +30,6 @@ class EndPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Container(
-          //   padding: const EdgeInsets.all(12),
-          //   constraints: BoxConstraints(
-          //       maxHeight: MediaQuery.of(context).size.height / 6),
-          //   child: SvgPicture.asset(
-          //     "assets/logo.svg",
-          //   ),
-          // ),
-          // SizedBox(
-          //   height: MediaQuery.of(context).size.height / 10,
-          // ),
-
           Text(
             "Scored $point out of 10",
             textAlign: TextAlign.center,
