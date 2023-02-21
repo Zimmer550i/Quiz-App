@@ -1,16 +1,5 @@
-# quizapp
+# Quiz-App
+This is a trivial app that will give you 10 trivial quiz of your choosing topic and difficulty. The questions were delivered by the-trivia-api.com
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# APK
+The APK file is available in build/app/outputs/flutter-apk/ 
