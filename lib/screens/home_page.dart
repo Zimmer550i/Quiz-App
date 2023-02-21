@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
       context,
       MaterialPageRoute(
         builder: (context) =>
-            QuizPage(questions: questions!, questionsCount: 10),
+            QuizPage(questions: questions!, questionsCount: 10, extra),
       ),
     );
   }

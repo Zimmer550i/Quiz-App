@@ -8,7 +8,8 @@ import 'package:quizapp/widgets/question_widget.dart';
 class QuizPage extends StatefulWidget {
   final List<Questions> questions;
   final int questionsCount;
-  const QuizPage(
+  final String extra;
+  const QuizPage(String this.extra,
       {super.key, required this.questions, required this.questionsCount});
 
   @override
@@ -25,7 +26,7 @@ class _QuizPageState extends State<QuizPage> {
 
   @override
   Widget build(BuildContext context) {
-    if (isLoaded==false) {
+    if (isLoaded == false) {
       //List Creation
       choices = List<String>.filled(0, "", growable: true);
       choices.add(widget.questions[questionNo].incorrectAnswers[0]);
@@ -46,7 +47,7 @@ class _QuizPageState extends State<QuizPage> {
             Flexible(
               child: Container(),
             ),
-        
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Row(
@@ -69,7 +70,7 @@ class _QuizPageState extends State<QuizPage> {
                 ],
               ),
             ),
-        
+
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: LinearProgressIndicator(
@@ -77,11 +78,11 @@ class _QuizPageState extends State<QuizPage> {
                 minHeight: 10,
               ),
             ),
-        
+
             QuestionWidget(
               questions: widget.questions[questionNo],
             ),
-        
+
             //Option 1
             InkWell(
               onTap: () {
@@ -95,7 +96,7 @@ class _QuizPageState extends State<QuizPage> {
                 isCorrect: isCorrect,
               ),
             ),
-        
+
             //Option 2
             InkWell(
               onTap: () {
@@ -109,7 +110,7 @@ class _QuizPageState extends State<QuizPage> {
                 isCorrect: isCorrect,
               ),
             ),
-        
+
             //Option 3
             InkWell(
               onTap: () {
@@ -123,7 +124,7 @@ class _QuizPageState extends State<QuizPage> {
                 isCorrect: isCorrect,
               ),
             ),
-        
+
             //Option 4
             InkWell(
               onTap: () {
@@ -137,7 +138,7 @@ class _QuizPageState extends State<QuizPage> {
                 isCorrect: isCorrect,
               ),
             ),
-        
+
             InkWell(
               onTap: () async {
                 if (selected != null) {
@@ -158,8 +159,15 @@ class _QuizPageState extends State<QuizPage> {
                     isLoaded = false;
                     if (questionNo < widget.questionsCount - 1) {
                       questionNo += 1;
-                    }else{
-                      Navigator.of(context).push(MaterialPageRoute(builder:(context) => EndPage(point: point),),);
+                    } else {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => EndPage(
+                            point: point,
+                            widget.extra,
+                          ),
+                        ),
+                      );
                     }
                   });
                 }
@@ -183,7 +191,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
             ),
-        
+
             Flexible(
               child: Container(),
             ),
